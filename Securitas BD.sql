@@ -40,6 +40,7 @@ CREATE TABLE `asegurado` (
 
 LOCK TABLES `asegurado` WRITE;
 /*!40000 ALTER TABLE `asegurado` DISABLE KEYS */;
+INSERT INTO `asegurado` VALUES (12345671,'2020-03-19','2020-03-16',1234561,3456781),(12345672,'2020-03-15','2020-03-16',1234562,3456782),(12345673,'2020-03-15','2020-03-15',1234563,0),(12345674,'2020-03-13','2020-03-14',1234564,3456783),(12345675,'2020-03-12','2020-03-15',1234565,3456784);
 /*!40000 ALTER TABLE `asegurado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,6 +179,7 @@ CREATE TABLE `especialidad` (
 
 LOCK TABLES `especialidad` WRITE;
 /*!40000 ALTER TABLE `especialidad` DISABLE KEYS */;
+INSERT INTO `especialidad` VALUES (1,'Cardiología'),(2,'Gastroenterología'),(3,'Cirugía'),(4,'Oftalmología'),(5,'Dermatología');
 /*!40000 ALTER TABLE `especialidad` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -315,6 +317,7 @@ CREATE TABLE `medico` (
 
 LOCK TABLES `medico` WRITE;
 /*!40000 ALTER TABLE `medico` DISABLE KEYS */;
+INSERT INTO `medico` VALUES (123,2345671,1,1),(124,2345672,2,2),(125,2345673,3,3),(126,2345674,4,4),(127,2345675,5,5);
 /*!40000 ALTER TABLE `medico` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -342,6 +345,7 @@ CREATE TABLE `persona` (
 
 LOCK TABLES `persona` WRITE;
 /*!40000 ALTER TABLE `persona` DISABLE KEYS */;
+INSERT INTO `persona` VALUES (1234561,'Müller','García','James','Karl','1982-10-15'),(1234562,'Smirnov','Nguyen','Anastasia','Maria','1995-02-05'),(1234563,'Smith','Wang ','Ben',NULL,'1996-03-29'),(1234564,'Hernández','Zhang','Emma','Alicia','1999-05-18'),(1234565,'González','Li – Lee','Miguel',NULL,'2000-02-25');
 /*!40000 ALTER TABLE `persona` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -450,6 +454,10 @@ LOCK TABLES `solicitud` WRITE;
 /*!40000 ALTER TABLE `solicitud` DISABLE KEYS */;
 /*!40000 ALTER TABLE `solicitud` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'securitas'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -460,4 +468,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-03-19  0:40:31
+-- Dump completed on 2020-03-19 12:58:46
