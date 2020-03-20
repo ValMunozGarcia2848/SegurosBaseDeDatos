@@ -128,6 +128,16 @@ CREATE TABLE `consultorio` (
 
 LOCK TABLES `consultorio` WRITE;
 /*!40000 ALTER TABLE `consultorio` DISABLE KEYS */;
+INSERT INTO `securitas`.`consultorio` (`CodConsultorio`, `NroConsultorio`, `Piso`, `CodHospital`) 
+VALUES ('1', '101', '1', '8001');
+INSERT INTO `securitas`.`consultorio` (`CodConsultorio`, `NroConsultorio`, `Piso`, `CodHospital`) 
+VALUES ('2', '102', '1', '8002');
+INSERT INTO `securitas`.`consultorio` (`CodConsultorio`, `NroConsultorio`, `Piso`, `CodHospital`) 
+VALUES ('3', '103', '1', '8003');
+INSERT INTO `securitas`.`consultorio` (`CodConsultorio`, `NroConsultorio`, `Piso`, `CodHospital`) 
+VALUES ('4', '104', '1', '8004');
+INSERT INTO `securitas`.`consultorio` (`CodConsultorio`, `NroConsultorio`, `Piso`, `CodHospital`) 
+VALUES ('5', '105', '1', '8005');
 /*!40000 ALTER TABLE `consultorio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,6 +272,16 @@ CREATE TABLE `hospital` (
 
 LOCK TABLES `hospital` WRITE;
 /*!40000 ALTER TABLE `hospital` DISABLE KEYS */;
+INSERT INTO `securitas`.`hospital` (`CodHospital`, `Nombre`, `Ubicacion`, `NroCamas`, `NroHabitaciones`, `NroPisos`, `CodSeguro`) 
+VALUES ('8001', 'Caja Petrolera de Salud', 'Av. 16 de Julio #1616', '48', '16', '4', '1234000');
+INSERT INTO `securitas`.`hospital` (`CodHospital`, `Nombre`, `Ubicacion`, `NroCamas`, `NroHabitaciones`, `NroPisos`, `CodSeguro`) 
+VALUES ('8002', 'Caja de Salud de la Banca Privada', 'Av. Capitán Ravelo, calle Montevideo', '45', '15', '4', '1234001');
+INSERT INTO `securitas`.`hospital` (`CodHospital`, `Nombre`, `Ubicacion`, `NroCamas`, `NroHabitaciones`, `NroPisos`, `CodSeguro`) 
+VALUES ('8003', 'Caja Nacional de Salud', 'Av. Mariscal Santa Cruz, calle Almirante Grau', '51', '17', '4', '1234002');
+INSERT INTO `securitas`.`hospital` (`CodHospital`, `Nombre`, `Ubicacion`, `NroCamas`, `NroHabitaciones`, `NroPisos`, `CodSeguro`) 
+VALUES ('8004', 'Seguro Social Universitario', 'Av. 6 de agosto, calle M. Pinilla', '36', '12', '3', '1234003');
+INSERT INTO `securitas`.`hospital` (`CodHospital`, `Nombre`, `Ubicacion`, `NroCamas`, `NroHabitaciones`, `NroPisos`, `CodSeguro`) 
+VALUES ('8005', 'Caja de Salud Cordes', 'Av. Arce, calle Belisario Salinas', '48', '12', '3', '1234004');
 /*!40000 ALTER TABLE `hospital` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -286,6 +306,16 @@ CREATE TABLE `medicamento` (
 
 LOCK TABLES `medicamento` WRITE;
 /*!40000 ALTER TABLE `medicamento` DISABLE KEYS */;
+INSERT INTO `securitas`.`medicamento` (`CodMedicamento`, `NombreMedicamento`, `Tipo`) 
+VALUES ('1111', 'Paracetamol', 'Analgésico');
+INSERT INTO `securitas`.`medicamento` (`CodMedicamento`, `NombreMedicamento`, `Tipo`) 
+VALUES ('1112', 'Ibuprofeno', 'Antiinflamatorio');
+INSERT INTO `securitas`.`medicamento` (`CodMedicamento`, `NombreMedicamento`, `Tipo`) 
+VALUES ('1113', 'Amoxisilina', 'Antibiótico');
+INSERT INTO `securitas`.`medicamento` (`CodMedicamento`, `NombreMedicamento`, `Tipo`) 
+VALUES ('1114', 'Diclofenaco', 'Desinflamante');
+INSERT INTO `securitas`.`medicamento` (`CodMedicamento`, `NombreMedicamento`, `Tipo`) 
+VALUES ('1115', 'Viadil', 'Antiespasmódico');
 /*!40000 ALTER TABLE `medicamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -397,6 +427,16 @@ CREATE TABLE `seguro` (
 
 LOCK TABLES `seguro` WRITE;
 /*!40000 ALTER TABLE `seguro` DISABLE KEYS */;
+INSERT INTO `securitas`.`seguro` (`CodSeguro`, `Nombre`, `Descripcion`, `MontoDeCobertura`) 
+VALUES ('1234000', 'Bisa Seguros Y Reaseguros S.A.', 'Privada', '100');
+INSERT INTO `securitas`.`seguro` (`CodSeguro`, `Nombre`, `Descripcion`, `MontoDeCobertura`) 
+VALUES ('1234001', 'Alianza Compañía de Seguros y Reaseguros S.A. E', 'Pública', '70');
+INSERT INTO `securitas`.`seguro` (`CodSeguro`, `Nombre`, `Descripcion`, `MontoDeCobertura`) 
+VALUES ('1234002', 'La Boliviana Ciacruz', 'Pública', '50');
+INSERT INTO `securitas`.`seguro` (`CodSeguro`, `Nombre`, `Descripcion`, `MontoDeCobertura`) 
+VALUES ('1234003', 'La Vitalicia', 'Pública', '60');
+INSERT INTO `securitas`.`seguro` (`CodSeguro`, `Nombre`, `Descripcion`, `MontoDeCobertura`) 
+VALUES ('1234004', 'UNIVida S.A. - Sucursal La Paz', 'Privada', '70');
 /*!40000 ALTER TABLE `seguro` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -409,7 +449,7 @@ DROP TABLE IF EXISTS `signosvitales`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `signosvitales` (
   `CodSignosVitales` int NOT NULL,
-  `PresionArterial` int DEFAULT NULL,
+  `PresionArterial` varchar(255) DEFAULT NULL,
   `Respiracion` varchar(255) DEFAULT NULL,
   `Pulso` int DEFAULT NULL,
   `Temperatura` int DEFAULT NULL,
@@ -423,6 +463,16 @@ CREATE TABLE `signosvitales` (
 
 LOCK TABLES `signosvitales` WRITE;
 /*!40000 ALTER TABLE `signosvitales` DISABLE KEYS */;
+INSERT INTO `securitas`.`signosvitales` (`CodSignosVitales`, `PresionArterial`, `Respiracion`, `Pulso`, `Temperatura`) 
+VALUES ('01', '110/70', '12', '70', '40');
+INSERT INTO `securitas`.`signosvitales` (`CodSignosVitales`, `PresionArterial`, `Respiracion`, `Pulso`, `Temperatura`) 
+VALUES ('02', '100/65', '15', '90', '36');
+INSERT INTO `securitas`.`signosvitales` (`CodSignosVitales`, `PresionArterial`, `Respiracion`, `Pulso`, `Temperatura`) 
+VALUES ('03', '115/75', '13', '65', '35');
+INSERT INTO `securitas`.`signosvitales` (`CodSignosVitales`, `PresionArterial`, `Respiracion`, `Pulso`, `Temperatura`) 
+VALUES ('04', '125/86', '17', '80', '37');
+INSERT INTO `securitas`.`signosvitales` (`CodSignosVitales`, `PresionArterial`, `Respiracion`, `Pulso`, `Temperatura`) 
+VALUES ('05', '130/90', '18', '75', '35');
 /*!40000 ALTER TABLE `signosvitales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -452,6 +502,16 @@ CREATE TABLE `solicitud` (
 
 LOCK TABLES `solicitud` WRITE;
 /*!40000 ALTER TABLE `solicitud` DISABLE KEYS */;
+INSERT INTO `securitas`.`solicitud` (`CodSolicitud`, `fechaDeSolicitud`, `CI`, `CodSeguro`) 
+VALUES ('001', '2020-01-21', '1234561', '1234000');
+INSERT INTO `securitas`.`solicitud` (`CodSolicitud`, `fechaDeSolicitud`, `CI`, `CodSeguro`) 
+VALUES ('002', '2019-11-03', '1234562', '1234001');
+INSERT INTO `securitas`.`solicitud` (`CodSolicitud`, `fechaDeSolicitud`, `CI`, `CodSeguro`) 
+VALUES ('003', '2019-05-06', '1234563', '1234002');
+INSERT INTO `securitas`.`solicitud` (`CodSolicitud`, `fechaDeSolicitud`, `CI`, `CodSeguro`) 
+VALUES ('004', '2018-09-02', '1234564', '1234003');
+INSERT INTO `securitas`.`solicitud` (`CodSolicitud`, `fechaDeSolicitud`, `CI`, `CodSeguro`) 
+VALUES ('005', '2018-02-12', '1234565', '1234004');
 /*!40000 ALTER TABLE `solicitud` ENABLE KEYS */;
 UNLOCK TABLES;
 
