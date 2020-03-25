@@ -1,5 +1,5 @@
 select persona.nombre1, persona.nombre2, persona.apellidoPaterno, persona.apellidoMaterno, diagnostico.Diagnostico from persona
-inner join asegurado on persona.CI = asegurado.CIDependiente
+inner join asegurado on persona.CI = asegurado.CI
 inner join citamedica on asegurado.Matricula = citamedica.Matricula
 inner join consultamedica on citamedica.CodCitaMedica=consultamedica.CodCitaMedica
 inner join signosvitales on signosvitales.CodSignosVitales=consultamedica.CodSignosVitales and 
@@ -11,7 +11,7 @@ inner join farmacia_medicamentos on medicamento.CodMedicamento=farmacia_medicame
 inner join farmacia on farmacia.CodFarmacia=farmacia_medicamentos.CodFarmacia;
 
 select persona.nombre1,persona.nombre2,persona.apellidoPaterno,persona.apellidoMaterno,citamedica.fecha,doctor.nombre1 as NombreDoctor,doctor.apellidoPaterno as ApellidoDoctor,especialidad.nombre as especialidad,hospital.nombre as hopital,consultorio.piso,consultorio.NroConsultorio from persona
-inner join asegurado on persona.CI=asegurado.CIDependiente
+inner join asegurado on persona.CI=asegurado.CI
 inner join citamedica on citamedica.Matricula=asegurado.Matricula
 inner join medico on medico.CodMedico=citamedica.CodMedico
 inner join especialidad on medico.CodEspecialidad=especialidad.CodEspecialidad
@@ -30,5 +30,7 @@ inner join consultorio on hospital.CodHospital = consultorio.CodHospital
 inner join  medico on consultorio.CodConsultorio= medico.CodConsultorio
 inner join persona on medico.CI = persona.CI;
 
-select persona.Nombre1, persona.Nombre2, ApellidoPaterno, ApellidoMaterno, year(DATE_SUB(NOW(),INTERVAL year(persona.fechaDeNAcimiento) YEAR)) as edad from persona
-inner join asegurado on (persona.CI = asegurado.CIDependiente and asegurado.CI<>0 and 24<year(DATE_SUB(NOW(),INTERVAL year(persona.fechaDeNAcimiento) YEAR)))
+select persona.Nombre1, persona.Nombre2, ApellidoPaterno, ApellidoMaterno, 
+year(DATE_SUB(NOW(),INTERVAL year(persona.fechaDeNAcimiento) YEAR)) as edad from persona
+inner join asegurado on (persona.CI = asegurado.CI and asegurado.CI<>0 
+and 24<year(DATE_SUB(NOW(),INTERVAL year(persona.fechaDeNAcimiento) YEAR)))

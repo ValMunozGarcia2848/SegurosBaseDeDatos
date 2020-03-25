@@ -1,5 +1,6 @@
+-- PacientesEnPeligro
 select persona.nombre1, persona.nombre2, persona.apellidoPaterno, persona.apellidoMaterno, diagnostico.Diagnostico from persona
-inner join asegurado on persona.CI = asegurado.CIDependiente
+inner join asegurado on persona.CI = asegurado.CI
 inner join citamedica on asegurado.Matricula = citamedica.Matricula
 inner join consultamedica on citamedica.CodCitaMedica=consultamedica.CodCitaMedica
 inner join signosvitales on signosvitales.CodSignosVitales=consultamedica.CodSignosVitales and 
